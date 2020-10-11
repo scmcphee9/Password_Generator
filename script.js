@@ -26,6 +26,7 @@ function generatePassword() {
   // passwordLength = passwordLength.getNumericValue
 // validates password length and prompts the following selections, stores the truthy or falsey values in global memory
   if (passwordLength >= 8 && passwordLength <= 128) {  
+    // run boolean prompts
   var upperSelection = confirm("Would you like Uppercase characters?");
   var lowerSelection = confirm("would you like Lowercase characters?");
   var numericSelection = confirm("Would you like numeric values?");
@@ -37,13 +38,13 @@ function generatePassword() {
 
   // Depending on selection, it will store those values in variable selectedCharacters[] in global memory
   if (upperSelection === true) {selectedCharacters = selectedCharacters.concat(upperCase);}
-  
-  if (lowerSelection != false) {selectedCharacters = selectedCharacters.concat(lowerCase);}
-  
+    
+  if (lowerSelection === true) {selectedCharacters = selectedCharacters.concat(lowerCase);}
+    
   if (numericSelection === true) {selectedCharacters = selectedCharacters.concat(numeric);}
-  
+    
   if (specialSelection === true) {selectedCharacters = selectedCharacters.concat(specialCharacters);}
-  else {return}
+  // else {return}
 
 
   console.log(passwordLength)
@@ -56,12 +57,20 @@ function generatePassword() {
 
 
 
+
+
+
+
+
+
+  
   var result = ""
 
   
 
   for(var i = 0; i < passwordLength; i++) {
 
+    // selectedCharacters = Collections.shuffle(selectedCharacters)
     result += selectedCharacters[Math.floor(Math.random() * selectedCharacters.length)];
     
   }
