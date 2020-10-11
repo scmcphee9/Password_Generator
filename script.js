@@ -53,20 +53,28 @@ function generatePassword() {
   console.log(lowerSelection)
   console.log(numericSelection)
   console.log(specialSelection)
-  console.log(selectedCharacters)
-
-
-
-
-
-
-
-
-
   
+
+
+
+
+  function shuffleArray() {
+    for (var i = selectedCharacters.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var selectedCharacters = selectedCharacters[i];
+        selectedCharacters[i] = selectedCharacters[j];
+        selectedCharacters[j] = selectedCharacters;
+    }
+}
+
+
+
+var allShuffled = shuffleArray(selectedCharacters)
+console.log(allShuffled)
+
   var result = ""
 
-  
+ 
 
   for(var i = 0; i < passwordLength; i++) {
 
