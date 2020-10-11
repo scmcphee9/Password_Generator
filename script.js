@@ -33,7 +33,7 @@ function generatePassword() {
    } 
 
   // if password length is not within 8-128, it will alert this message
-  else {alert("Invalid entry, please try another value...")}
+  else {alert("Invalid entry, please try another value..."); return}
 
   // Depending on selection, it will store those values in variable selectedCharacters[] in global memory
   if (upperSelection === true) {selectedCharacters = selectedCharacters.concat(upperCase);}
@@ -43,7 +43,7 @@ function generatePassword() {
   if (numericSelection === true) {selectedCharacters = selectedCharacters.concat(numeric);}
   
   if (specialSelection === true) {selectedCharacters = selectedCharacters.concat(specialCharacters);}
-  else {alert("You must select characters for your password.")}
+  else {return}
 
 
   console.log(passwordLength)
@@ -57,14 +57,16 @@ function generatePassword() {
 
 
   var result = ""
+
   
 
   for(var i = 0; i < passwordLength; i++) {
 
-    result = result + selectedCharacters[Math.floor(Math.random(i) * selectedCharacters.length)];
-    return result
-
+    result += selectedCharacters[Math.floor(Math.random() * selectedCharacters.length)];
+    
   }
+
+  return result
   
   // logic to generate password for function generatePassword
 }
